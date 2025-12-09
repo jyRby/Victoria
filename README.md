@@ -54,7 +54,33 @@ Contrairement aux médias sociaux dispersés, Victoria centralise tout le fandom
 
 ## 🛠️ Stack technologique
 
-'''mer
+```mermaid
+architecture-beta
+    group api(cloud)[API]
+
+    service db(database)[Database] in api
+    service server(server)[Server] in api
+
+    db:L -- R:server
+
+    group microServices[Micro Services]
+
+    service dbPWHL(database)[Database] in microServices
+    service serverPWHL(server)[Server] in microServices
+
+    dbPWHL:L -- R:serverPWHL
+
+    group apim[APIM]
+    service serverapim(server)[APIM] in apim
+    
+    serverapim:L -- R:server
+    serverapim:T -- B:serverPWHL
+
+    group app[App Mobile]
+    service appM(disk) in app
+
+    serverapim:L -- R:appM
+```
 
 ### **Frontend – Mobile**
 - React Native  
