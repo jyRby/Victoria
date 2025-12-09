@@ -22,13 +22,13 @@ Les livrables sont développés en suivant une approche Agile/Scrum et un MVP cl
 | **Sprint 4** | 15 jan – 21 jan | Gamification (badges), outils admin, notifications |
 | **Tests** | 21 jan | Tests fonctionnels + d’acceptation |
 | **Déploiement** | 22 jan | Build final + publication |
-| **Présentation** | 23 jan | Présentation en classe |
+| **Présentation** | 23 jan | Présentation |
 
 ---
 
 ## 🎯 Vision du produit
 
-IceQueens vise à offrir une **plateforme unifiée, interactive et communautaire** aux fans :
+Victoria vise à offrir une **plateforme unifiée, interactive et communautaire** aux fans :
 
 - Horaire complet + détails des matchs  
 - Statistiques de l’équipe et des joueuses  
@@ -62,7 +62,7 @@ Contrairement aux médias sociaux dispersés, IceQueens centralise tout le fando
 
 ### **Backend**
 - Node.js + Express  
-- Firebase Auth  
+- JWT  
 - API externe : *pwhl-scrapper / league-stat*
 
 ### **Base de données**
@@ -83,13 +83,6 @@ Contrairement aux médias sociaux dispersés, IceQueens centralise tout le fando
 
 - [DESIGN.md](DESIGN.md) — Architecture, diagrammes, UX, design system  
 - [USER_STORIES.md](USER_STORIES.md) — Backlog complet + épics + points  
-
----
-
-## 🤝 Contribution
-
-Les contributions sont les bienvenues sous forme de pull requests.  
-Veuillez respecter la **Definition of Ready** et la **Definition of Done** décrites dans le document des user stories.
 
 ---
 
