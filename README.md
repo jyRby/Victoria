@@ -1,7 +1,7 @@
 # Victoria – Application Mobile (En Développement)
 
 Bienvenue dans le dépôt officiel du projet **Victoria**, une application mobile destinée aux fans de l’équipe *La Victoire de Montréal*.  
-L’objectif du projet est d’unifier l’information officielle (horaire, alignement, statistiques) et le contenu généré par les fans afin de bâtir une plateforme interactive et gamifiée.
+L’objectif du projet est d’unifier l’information officielle (horaire, alignement, statistiques) afin de bâtir une plateforme interactive et gamifiée encourageant le fandom.
 
 ---
 
