@@ -1,0 +1,33 @@
+# IDE files
+.idea/
+*.iml
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vscode/
+__pycache__/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.lock
+*.cache
+*.bak
+*.orig
+
+# Node.js/JavaScript dependencies and packaging
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+
+# Environment variables
+.env
+
+# macOS-specific files
+.symlinks/
+*.DS_Store
