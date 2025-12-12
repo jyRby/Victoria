@@ -1,0 +1,256 @@
+title Victoria ERD
+users [icon: user, color: lightblue] {
+  id INTEGER PRIMARY KEY
+  username TEXT unique
+  email TEXT
+  password TEXT
+  createdAt TEXT
+
+}
+
+fidelityRanks {
+  id INTEGER PRIMARY KEY
+  postedEchoes INTEGER
+  likedEchoes INTEGER
+  echoesScore INTEGER
+  echoesRank TEXT
+  predictionRatio REAL
+  predictionScore INTEGER
+  fidelityRank TEXT
+  badgeSelection TEXT
+  userId INTEGER FOREIGN KEY
+}
+
+echoes {
+  id INTEGER PRIMARY KEY
+  content TEXT
+  likes INTEGER
+  flagged BOOLEAN
+  createdAt TEXT
+
+  userId INTEGER FOREIGN KEY
+}
+
+lockerrooms {
+  id INTEGER PRIMARY KEY
+  gameId INTEGER FOREIGN KEY
+  echoesId INTEGER FOREIGN KEY
+}
+
+badges {
+  id INTEGER PRIMARY KEY
+  image TEXT
+}
+
+badgesAvaibility {
+  id INTEGER PRIMARY KEY
+  fidelityRankId INTEGER FOREIGN KEY
+  badgesId INTEGER FOREIGN KEY
+}
+
+leagues {
+  id INTEGER PRIMARY KEY
+  name TEXT
+  shortName TEXT
+  code TEXT
+  logoUrl TEXT
+}
+
+conferences {
+  id INTEGER PRIMARY KEY
+  name TEXT
+  leagueId INTEGER FOREIGN KEY
+}
+
+divisions {
+  id INTEGER PRIMARY KEY
+  name TEXT
+  leagueId INTEGER FOREIGN KEY
+  conferenceId INTEGER FOREIGN KEY
+}
+
+seasons {
+  id INTEGER PRIMARY KEY
+  name TEXT
+  career BOOLEAN
+  playoff BOOLEAN
+  startDate TEXT
+  endDate TEXT
+}
+
+teams {
+  id INTEGER PRIMARY KEY
+  name TEXT
+  nickname TEXT
+  code TEXT
+  city TEXT
+  color TEXT
+  logoUrl TEXT
+  leagueId INTEGER FOREIGN KEY
+  conferenceId INTEGER FOREIGN KEY
+  divisionId INTEGER FOREIGN KEY
+}
+
+players {
+  id INTEGER PRIMARY KEY
+  firstName TEXT
+  lastName TEXT
+  jerseyNumber INTEGER
+  active BOOLEAN
+  rookie BOOLEAN
+  positionId INTEGER
+  position CHARACTER
+  height TEXT
+  weight TEXT
+  birthdate TEXT
+  shoots CHARACTER
+  catches CHARACTER
+  imageUrl TEXT
+  birthTown TEXT
+  birthCountry TEXT
+  nationality TEXT
+  draftType TEXT
+  veteranStatus INTEGER
+  veteranDescription TEXT
+  latestTeamId INTEGER FOREIGN KEY
+}
+
+games {
+  id INTEGER PRIMARY KEY
+  seasonId INTEGER FOREIGN KEY
+  gameNumber INTEGER
+  date TEXT
+  homeTeam INTEGER FOREIGN KEY
+  visitingTeam INTEGER FOREIGN KEY
+  homeGoalCount INTEGER
+  visitingGoalCount INTEGER
+  periods INTEGER
+  overtime INTEGER
+  shoutoot INTEGER
+  status INTEGER
+  gameStatus TEXT
+  venueNamE TEXT
+  venueLocation TEXT
+  attendance INTEGER
+}
+playoffRounds {
+  id INTEGER PRIMARY KEY
+  seasonId INTEGER FOREIGN KEY
+  round INTEGER
+  roundName TEXT
+  roundTypeId INTEGER
+  roundTypeName TEXT
+}
+
+playoffSeries {
+  id INTEGER PRIMARY KEY
+  seasonId INTEGER FOREIGN KEY
+  roundId INTEGER FOREIGN KEY
+  seriesLetter TEXT
+  seriesName TEXT
+  seriesLogoUrl TEXT
+  active BOOLEAN
+  team1 INTEGER FOREIGN KEY
+  team2 INTEGER FOREIGN KEY
+  contentEn TEXT
+  winner INTEGER
+  teams1Wins INTEGER
+  teams2Wins INTEGER
+  ties INTEGER
+  feederSeries1 TEXT
+  feederSeries2 TEXT
+  round INTEGER
+}
+
+playoffGames {
+  id INTEGER PRIMARY KEY
+  seasonId INTEGER FOREIGN KEY
+  roundId INTEGER FOREIGN KEY
+  seriesId INTEGER FOREIGN KEY
+  gameId INTEGER FOREIGN KEY
+}
+
+teamsSeasonStats {
+  id INTEGER PRIMARY KEY
+  seasonId TEXT FOREIGN KEY
+  teamId INTEGER fk
+  divisionId INTEGER fk
+  wins INTEGER
+  losses INTEGER
+  ties INTEGER
+  otLosses INTEGER
+  regOtLosses INTEGER
+  regLosses INTEGER
+  otWins INTEGER
+  shootoutWins INTEGER
+  shootoutLosses INTEGER
+  regulationWins INTEGER
+  row INTEGER
+  points INTEGER
+  benchMinutes INTEGER
+  penaltyMinutes INTEGER
+  goalsFor INTEGER
+  goalsAgainst INTEGER
+  goalsDiff INTEGER
+  powerPlayGoals INTEGER
+  powerPlayGoalsAgainst INTEGER
+  shootoutGoals INTEGER
+  shootoutGoalsAgainst INTEGER
+  shootoutAttempts INTEGER
+  shootoutAttemptsAgainst INTEGER
+  shortHandedGoalsFor INTEGER
+  shortHandedGoalsAgainst INTEGER
+  percentage REAL
+  percentageFull REAL
+  shootoutGamesPlayed INTEGER
+  gamesPlayed INTEGER
+  shootoutPct REAL
+  powerPlayPct REAL
+  shootoutPctGoalsFor REAL
+  shootoutPctGoalsAgainst REAL
+  penaltyKillPct REAL
+  pimPg REAL
+  powerPlays INTEGER
+  winPercentage REAL
+  timesShortHanded INTEGER
+  shootoutRecord REAL
+  homeRecord TEXT
+  visitingRecord TEXT
+}
+
+
+users.id - fidelityRanks.userId
+fidelityRanks.id > badgesAvaibility.fidelityRankId
+badges.id > badgesAvaibility.badgesId
+users.id < echoes.userId
+lockerrooms.echoesId < echoes.id
+
+
+games.id - lockerrooms.gameId
+leagues.id < conferences.leagueId
+leagues.id < divisions.leagueId
+conferences.id - divisions.conferenceId
+teams.leagueId > leagues.id
+teams.conferenceId > conferences.id
+teams.divisionId > divisions.id
+players.latestTeamId > teams.id
+games.seasonId > seasons.id
+games.homeTeam - teams.id
+games.visitingTeam - teams.id
+playoffRounds.seasonId > seasons.id
+playoffSeries.seasonId > seasons.id
+playoffSeries.roundId - playoffRounds.id
+playoffSeries.team1 < teams.id
+playoffSeries.team2 < teams.id
+playoffGames.gameId - games.id
+playoffGames.roundId - playoffRounds.id
+playoffGames.seasonId < seasons.id
+playoffGames.seriesId < playoffSeries.id
+
+
+
+
+
+
+
+
