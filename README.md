@@ -1,7 +1,7 @@
 # Victoria – Application Mobile (En Développement)
 
 Bienvenue dans le dépôt officiel du projet **Victoria**, une application mobile destinée aux fans de l’équipe *La Victoire de Montréal*.  
-L’objectif du projet est d’unifier l’information officielle (horaire, alignement, statistiques) afin de bâtir une plateforme interactive et gamifiée encourageant le fandom.
+L’objectif du projet est d’unifier l’information officielle (horaire, alignement, statistiques) afin de bâtir une plateforme interactive et gamifiée. 
 
 ---
 
@@ -109,8 +109,8 @@ architecture-beta
 
 ## 📄 Documents
 
-- [DESIGN.md](DESIGN.md) — Architecture, diagrammes, UX, design system  
-- [USER_STORIES.md](USER_STORIES.md) — Backlog complet + épics + points  
+- [DESIGN.md](/design/DESIGN.md) — Architecture, diagrammes, UX, design system  
+- [USER_STORIES.md](/design/USER_STORIES.md) — Backlog complet + épics + points  
 
 ---
 
