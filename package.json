@@ -1,0 +1,25 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Victoria API V1",
+  "homepage": "https://github.com/jyRby/Victoria#readme",
+  "bugs": {
+    "url": "https://github.com/jyRby/Victoria/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jyRby/Victoria.git"
+  },
+  "license": "ISC",
+  "author": "jyrby",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11",
+    "sequelize": "^6.37.7"
+  }
+}

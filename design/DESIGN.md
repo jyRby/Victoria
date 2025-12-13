@@ -1,4 +1,4 @@
-# DESIGN – Victoria
+# DESIGN – Victoria V0.25
 
 Ce document présente l’architecture, la logique de conception et les éléments visuels prévus pour l’application Victoria.
 
