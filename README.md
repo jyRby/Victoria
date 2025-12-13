@@ -5,7 +5,7 @@ L’objectif du projet est d’unifier l’information officielle (horaire, alig
 
 ---
 
-## 📌 Statut du projet
+## Statut du projet
 
 🚧 **Projet en développement actif**  
 Les livrables sont développés en suivant une approche Agile/Scrum et un MVP clair.
@@ -26,7 +26,7 @@ Les livrables sont développés en suivant une approche Agile/Scrum et un MVP cl
 
 ---
 
-## 🎯 Vision du produit
+## Vision du produit
 
 Victoria vise à offrir une **plateforme unifiée, interactive et communautaire** aux fans :
 
@@ -40,7 +40,7 @@ Contrairement aux médias sociaux dispersés, Victoria centralise tout le fandom
 
 ---
 
-## 🧩 Vision du MVP
+## Vision du MVP
 
 - Authentification simple (email / Google)
 - Horaire de la saison + détails des matchs
@@ -52,35 +52,8 @@ Contrairement aux médias sociaux dispersés, Victoria centralise tout le fandom
 
 ---
 
-## 🛠️ Stack technologique
+## Stack technologique
 
-```mermaid
-architecture-beta
-    group api(cloud)[API]
-
-    service db(database)[Database] in api
-    service server(server)[Server] in api
-
-    db:L -- R:server
-
-    group microServices[Micro Services]
-
-    service dbPWHL(database)[Database] in microServices
-    service serverPWHL(server)[Server] in microServices
-
-    dbPWHL:L -- R:serverPWHL
-
-    group apim[APIM]
-    service serverapim(server)[APIM] in apim
-    
-    serverapim:L -- R:server
-    serverapim:T -- B:serverPWHL
-
-    group app[App Mobile]
-    service appM(disk) in app
-
-    serverapim:L -- R:appM
-```
 
 ### **Frontend – Mobile**
 - React Native  
